@@ -1,15 +1,14 @@
 class Game
 
   def initialize
-    @player1 = "Picard"
-    @player2 = "Kirk"
+    @player1 = {name: "Picard", lives: 3}
+    @player2 = {name: "Kirk", lives: 3 }
     @turn = 1 
 
   end
 
   def play
-    lives = 3
-    while lives > 0
+    while @player1[:lives] > 0
       number1 = rand(1..20)
       number2 = rand(1..20)
       puts "What's is #{number1} plus #{number2} equal?"
@@ -19,8 +18,8 @@ class Game
         puts "Correct! The answer is #{answer}!"
       else
         puts "I'm sorry. That's wrong!"
-        lives = lives - 1
-        puts "Lives #{lives}/3 remaining!"
+        @player1[:lives] -= 1
+        puts "Lives #{@player1[:lives]}/3 remaining!"
       end
     end
   end
