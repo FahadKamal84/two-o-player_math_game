@@ -1,4 +1,4 @@
-class player
+class Player
 
   attr_accessor :lives
   def initialize(name)
