@@ -4,7 +4,7 @@ class Game
     @player1 = {name: "Picard", lives: 3}
     @player2 = {name: "Kirk", lives: 3 }
     @players = [@player1, @player2]
-    @turn = 1 
+ 
 
   end
 
@@ -38,6 +38,7 @@ class Game
     
     puts "-------------GAME OVER-------------"
 
+    puts
     puts "#{winner[:name]} wins the game with a score of #{winner[:lives]}/3"
     puts
 
