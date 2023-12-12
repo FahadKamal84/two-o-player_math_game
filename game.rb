@@ -18,13 +18,29 @@ class Game
       sum = number1 + number2
       if  answer == sum.to_s
         puts "Correct! The answer is #{answer}!"
+        puts "#{@player1[:name]}: #{@player1[:lives]}/3  vs  #{@player2[:name]}: #{@player2[:lives]}/3"
       else
         puts "I'm sorry. That's wrong!"
         answering_player[:lives] -= 1
-        puts "Lives #{answering_player[:lives]}/3 remaining!"
+        puts "#{@player1[:name]}: #{@player1[:lives]}/3  vs  #{@player2[:name]}: #{@player2[:lives]}/3"
+      end
+
+      if @player1[:lives] > 0 && @player2[:lives] > 0
+        puts
+        puts "-------------NEW TURN-------------"
+        puts
       end
       @players.rotate!
     end
+    
+    winner = @player1[:lives] > 0 ? @player1 : @player2
+    puts 
+    
+    puts "-------------GAME OVER-------------"
+
+    puts "#{winner[:name]} wins the game with a score of #{winner[:lives]}/3"
+    puts
+
   end
 
 
