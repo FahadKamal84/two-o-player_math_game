@@ -1,6 +1,5 @@
 require "./game"
 require "./player"
 
-class main
-
-end
+game_test = Game.new()
+game_test.play

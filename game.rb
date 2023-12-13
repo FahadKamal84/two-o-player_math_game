@@ -49,5 +49,3 @@ class Game
 
 end
 
-game_test = Game.new()
-game_test.play
